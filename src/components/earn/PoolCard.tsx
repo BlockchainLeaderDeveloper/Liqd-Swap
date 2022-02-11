@@ -99,7 +99,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
     valueOfTotalStakedAmountInWETH = new TokenAmount(
       WETH,
       JSBI.divide(
-        JSBI.multiply(
+        JSBI.divide(
           JSBI.multiply(stakingInfo.totalStakedAmount.raw, stakingTokenPair.reserveOf(WETH).raw),
           JSBI.BigInt(2) // this is b/c the value of LP shares are ~double the value of the WETH they entitle owner to
         ),
@@ -170,7 +170,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
               </>
               :
               !stakingInfo.isTokenOnly && !stakingInfo.isNftToken ?
-                stakingInfo.name === 'SPYRIT-WMATIC' ?
+                stakingInfo.name === 'SPYRIT-WFTM' ?
                   <>
                     <DoubleCurrencyLogo currency0={currency0} currency1={currency1} size={24} />
                     <TYPE.white fontWeight={600} fontSize={24} style={{ marginLeft: '8px' }}>
@@ -216,7 +216,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
                     ? Math.ceil(parseFloat(valueOfTotalStakedAmountInUSDC.toFixed(6)) * 1000000) / 1000000 !== 0
                       ? `$${valueOfTotalStakedAmountInUSDC.toFixed(4, { groupSeparator: ',' })}`
                       : `$${valueOfTotalStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}`
-                    : `${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} MATIC`}
+                    : `${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} FTM`}
                 </TYPE.white>
               </RowBetween>
               <RowBetween>
@@ -224,7 +224,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
                 <TYPE.white> Pool rate </TYPE.white>
                 <TYPE.white>{`${stakingInfo.totalRewardRate
                   ?.multiply(`${60 * 60 * 24}`)
-                  ?.toFixed(0, { groupSeparator: ',' })} WELT / day`}</TYPE.white>
+                  ?.toFixed(0, { groupSeparator: ',' })} LIQD / day`}</TYPE.white>
               </RowBetween>
               <RowBetween>
                 <TYPE.white> APY </TYPE.white>
@@ -251,7 +251,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
                   ? Math.ceil(parseFloat(valueOfTotalStakedAmountInUSDC.toFixed(6)) * 1000000) / 1000000 !== 0
                     ? `$${valueOfTotalStakedAmountInUSDC.toFixed(4, { groupSeparator: ',' })}`
                     : `$${valueOfTotalStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}`
-                  : `${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} MATIC`}
+                  : `${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} FTM`}
               </TYPE.white>
             </RowBetween>
             <RowBetween>
@@ -259,7 +259,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
               <TYPE.white> Pool rate </TYPE.white>
               <TYPE.white>{`${stakingInfo.totalRewardRate
                 ?.multiply(`${60 * 60 * 24}`)
-                ?.toFixed(0, { groupSeparator: ',' })} WELT / day`}</TYPE.white>
+                ?.toFixed(0, { groupSeparator: ',' })} LIQD / day`}</TYPE.white>
             </RowBetween>
             <RowBetween>
               <TYPE.white> APY </TYPE.white>
@@ -298,7 +298,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
                 : '-'} */}
                 {`${stakingInfo.rewardRate
                   ?.multiply(`${60 * 60 * 24}`)
-                  ?.toSignificant(4, { groupSeparator: ',' })} WELT / day`}
+                  ?.toSignificant(4, { groupSeparator: ',' })} LIQD / day`}
               </TYPE.black>
             </BottomSection>
           </>

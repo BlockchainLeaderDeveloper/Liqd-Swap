@@ -78,8 +78,8 @@ export default function ConfirmSwapModal({
   }, [allowedSlippage, onConfirm, showAcceptChanges, swapErrorMessage, trade])
 
   // text to show while loading
-  const pendingText = `Swapping ${trade?.inputAmount?.toSignificant(6)} ${trade?.inputAmount?.currency?.symbol === 'ETH' ? 'MATIC' : trade?.inputAmount?.currency?.symbol
-    } for ${trade?.outputAmount?.toSignificant(6)} ${trade?.outputAmount?.currency?.symbol === 'ETH' ? 'MATIC' : trade?.outputAmount?.currency?.symbol}`
+  const pendingText = `Swapping ${trade?.inputAmount?.toSignificant(6)} ${trade?.inputAmount?.currency?.symbol === 'ETH' ? 'FTM' : trade?.inputAmount?.currency?.symbol
+    } for ${trade?.outputAmount?.toSignificant(6)} ${trade?.outputAmount?.currency?.symbol === 'ETH' ? 'FTM' : trade?.outputAmount?.currency?.symbol}`
 
   const confirmationContent = useCallback(
     () =>

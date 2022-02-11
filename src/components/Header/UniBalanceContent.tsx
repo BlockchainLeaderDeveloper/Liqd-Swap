@@ -65,7 +65,7 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
         <CardNoise />
         <CardSection gap="md">
           <RowBetween>
-            <TYPE.white color="white">Your WELT Breakdown</TYPE.white>
+            <TYPE.white color="white">Your LIQD Breakdown</TYPE.white>
             <StyledClose stroke="white" onClick={() => setShowUniBalanceModal(false)} />
           </RowBetween>
         </CardSection>
@@ -92,11 +92,11 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
         <CardSection gap="sm">
           <AutoColumn gap="md">
             <RowBetween>
-              <TYPE.white color="white">WELT price:</TYPE.white>
+              <TYPE.white color="white">LIQD price:</TYPE.white>
               <TYPE.white color="white">${uniPrice?.toFixed(3) ?? '-'}</TYPE.white>
             </RowBetween>
             <RowBetween>
-              <TYPE.white color="white">WELT in circulation:</TYPE.white>
+              <TYPE.white color="white">LIQD in circulation:</TYPE.white>
               <TYPE.white color="white">{circulation?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
             </RowBetween>
             <RowBetween>
@@ -104,7 +104,7 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
               <TYPE.white color="white">{totalSupply?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
             </RowBetween>
             {/* {uni && uni.chainId === ChainId.MATIC ? (
-              <ExternalLink href={`https://info.quickswap.exchange/token/${uni.address}`}>View WELT Analytics</ExternalLink>
+              <ExternalLink href={`https://info.quickswap.exchange/token/${uni.address}`}>View LIQD Analytics</ExternalLink>
             ) : null} */}
           </AutoColumn>
         </CardSection>

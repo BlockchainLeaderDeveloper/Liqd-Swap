@@ -3,8 +3,9 @@ import { useMemo } from 'react'
 import {
   UNI,
   WELT,
-  WMATIC,
-  USDC
+
+  USDC,
+  FTM
 } from '../../constants'
 import { STAKING_REWARDS_INTERFACE, VAULT_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
@@ -28,21 +29,21 @@ export const STAKING_REWARDS_INFO: {
     isNftToken?: boolean
   }[]
 } = {
-  [ChainId.MATIC]: [//TODO: MATIC
+  [ChainId.FTM]: [//TODO: FTM
 
-    {
-      tokens: [WELT, WMATIC],
-      stakingRewardAddress: '0x44A8E1e56F5c56f601F55c1B5AFEcC7BeB3A8392',  //0x0BA25dFFB326e89E83fDbc1995C1a12E7F929D6f
-      ended: false,
+    // {
+    //   tokens: [WELT, WMATIC],
+    //   stakingRewardAddress: '0x44A8E1e56F5c56f601F55c1B5AFEcC7BeB3A8392',  //0x0BA25dFFB326e89E83fDbc1995C1a12E7F929D6f
+    //   ended: false,
 
-      name: 'WELT-MATIC',
-      lp: '0xe273d3925f6dc6ffedf7aa082594653376a2d38d',
-      baseToken: [WMATIC]
-      //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    },
+    //   name: 'WELT-MATIC',
+    //   lp: '0xe273d3925f6dc6ffedf7aa082594653376a2d38d',
+    //   baseToken: [WMATIC]
+    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
+    // },
     
     {
-      tokens: [WELT, WMATIC],
+      tokens: [WELT, FTM],
       stakingRewardAddress: '0xf9809c1C302AC583E904056b3b9268bE829d4741',  //0x0BA25dFFB326e89E83fDbc1995C1a12E7F929D6f
       ended: false,
 
@@ -97,28 +98,28 @@ export const STAKING_REWARDS_INFO: {
 
 
 
-    {
-      tokens: [WELT, WMATIC],
-      stakingRewardAddress: '0x39fC297695209A5EBB26eC1abaE52858f4CA2D03',
-      ended: false,
-      isTokenOnly:true,
+    // {
+    //   tokens: [WELT, WMATIC],
+    //   stakingRewardAddress: '0x39fC297695209A5EBB26eC1abaE52858f4CA2D03',
+    //   ended: false,
+    //   isTokenOnly:true,
 
-      name: 'WELT',
-      lp: '0x23e8b6a3f6891254988b84da3738d2bfe5e703b9',
-      baseToken: [WELT]
-      //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    },
-    {
-      tokens: [WELT, WMATIC],
-      stakingRewardAddress: '0x92A9d2054dc8cBc915498912E9cE724EfDe20A65',
-      ended: false,
-      isTokenOnly:true,
+    //   name: 'WELT',
+    //   lp: '0x23e8b6a3f6891254988b84da3738d2bfe5e703b9',
+    //   baseToken: [WELT]
+    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
+    // },
+    // {
+    //   tokens: [WELT, WMATIC],
+    //   stakingRewardAddress: '0x92A9d2054dc8cBc915498912E9cE724EfDe20A65',
+    //   ended: false,
+    //   isTokenOnly:true,
 
-      name: 'vault',
-      lp: '0x23e8b6a3f6891254988b84da3738d2bfe5e703b9',
-      baseToken: [WELT]
-      //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    },
+    //   name: 'vault',
+    //   lp: '0x23e8b6a3f6891254988b84da3738d2bfe5e703b9',
+    //   baseToken: [WELT]
+    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
+    // },
     
     // NFT test
     // {
@@ -338,9 +339,9 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
         lp && lp !== '' ? 
         info[index].isTokenOnly ? 
         info[index].tokens[0] 
-        : new Token(137, lp, 18, "SLP", "Staked LP") 
+        : new Token(250, lp, 18, "SLP", "Staked LP") 
         : dummyPair.liquidityToken, JSBI.BigInt(balanceState?.result?.[0] ?? 0))
-        const totalStakedAmount = new TokenAmount(lp && lp !== '' ? info[index].isTokenOnly ? info[index].tokens[0] : new Token(137, lp, 18, "SLP", "Staked LP") : dummyPair.liquidityToken, JSBI.BigInt(totalSupplyState.result?.[0]))
+        const totalStakedAmount = new TokenAmount(lp && lp !== '' ? info[index].isTokenOnly ? info[index].tokens[0] : new Token(250, lp, 18, "SLP", "Staked LP") : dummyPair.liquidityToken, JSBI.BigInt(totalSupplyState.result?.[0]))
 
         const totalRewardRate = new TokenAmount(uni, JSBI.BigInt(rewardRateState.result?.[0]))
 

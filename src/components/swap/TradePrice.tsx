@@ -19,8 +19,8 @@ export default function TradePrice({ price, showInverted, setShowInverted }: Tra
 
   const show = Boolean(price?.baseCurrency && price?.quoteCurrency)
   const label = showInverted
-    ? `${price?.quoteCurrency?.symbol === 'ETH' ? 'MATIC' : price?.quoteCurrency?.symbol} per ${price?.baseCurrency?.symbol === 'ETH' ? 'MATIC' : price?.baseCurrency?.symbol}`
-    : `${price?.baseCurrency?.symbol === 'ETH' ? 'MATIC' : price?.baseCurrency?.symbol} per ${price?.quoteCurrency?.symbol === 'ETH' ? 'MATIC' : price?.quoteCurrency?.symbol}`
+    ? `${price?.quoteCurrency?.symbol === 'ETH' ? 'FTM' : price?.quoteCurrency?.symbol} per ${price?.baseCurrency?.symbol === 'ETH' ? 'FTM' : price?.baseCurrency?.symbol}`
+    : `${price?.baseCurrency?.symbol === 'ETH' ? 'FTM' : price?.baseCurrency?.symbol} per ${price?.quoteCurrency?.symbol === 'ETH' ? 'FTM' : price?.quoteCurrency?.symbol}`
 
   return (
     <Text

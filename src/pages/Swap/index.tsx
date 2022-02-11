@@ -215,8 +215,8 @@ export default function Swap() {
                 ? 'Swap w/o Send + recipient'
                 : 'Swap w/ Send',
           label: [
-            trade?.inputAmount?.currency?.symbol === 'ETH' ? 'MATIC' : trade?.inputAmount?.currency?.symbol,
-            trade?.outputAmount?.currency?.symbol === 'ETH' ? 'MATIC' : trade?.outputAmount?.currency?.symbol,
+            trade?.inputAmount?.currency?.symbol === 'ETH' ? 'FTM' : trade?.inputAmount?.currency?.symbol,
+            trade?.outputAmount?.currency?.symbol === 'ETH' ? 'FTM' : trade?.outputAmount?.currency?.symbol,
             getTradeVersion(trade)
           ].join('/')
         })

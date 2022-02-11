@@ -258,7 +258,7 @@ export default function Manage({
     valueOfTotalStakedAmountInWETH = new TokenAmount(
       WETH,
       JSBI.divide(
-        JSBI.multiply(
+        JSBI.divide(
           JSBI.multiply(stakingInfo.totalStakedAmount.raw, stakingTokenPair.reserveOf(WETH).raw),
           JSBI.BigInt(2) // this is b/c the value of LP shares are ~double the value of the WETH they entitle owner to
         ),
@@ -268,7 +268,7 @@ export default function Manage({
     valueOfMyStakedAmountInWETH = new TokenAmount(
       WETH,
       JSBI.divide(
-        JSBI.multiply(
+        JSBI.divide(
           JSBI.multiply(stakingInfo.stakedAmount.raw, stakingTokenPair.reserveOf(WETH).raw),
           JSBI.BigInt(2) // this is b/c the value of LP shares are ~double the value of the WETH they entitle owner to
         ),
@@ -362,7 +362,7 @@ export default function Manage({
                     ? `$${valueOfTotalStakedAmountInUSDC.toFixed(4, { groupSeparator: ',' })}-${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' })}WELT `
                     : `$${valueOfTotalStakedAmountInUSDC.toFixed(4, { groupSeparator: ',' })}-${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' })}LP `
                   : `$${valueOfTotalStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}`
-                : `${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} MATIC`}
+                : `${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} FTM`}
             </TYPE.body>
           </AutoColumn>
         </PoolData>
@@ -373,7 +373,7 @@ export default function Manage({
               {stakingInfo?.totalRewardRate
                 ?.multiply((60 * 60 * 24).toString())
                 ?.toFixed(0, { groupSeparator: ',' }) ?? '-'}
-              {' WELT / day'}
+              {' LIQD / day'}
             </TYPE.body>
           </AutoColumn>
         </PoolData>
@@ -447,7 +447,7 @@ export default function Manage({
                       ? stakingInfo?.isTokenOnly
                         ? `$${valueOfMyStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}-${valueOfMyStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} WELT`
                         : `$${valueOfMyStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}-${valueOfMyStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} LP`
-                      : `${valueOfMyStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} MATIC`}
+                      : `${valueOfMyStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} FTM`}
                   </TYPE.white>
                   <TYPE.white>
                     {

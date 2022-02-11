@@ -128,11 +128,11 @@ export function useDerivedSwapInfo(): {
   } = useSwapState()
   if(outputCurrencyId == '')
   {
-    outputCurrencyId = '0x23E8B6A3f6891254988B84Da3738D2bfe5E703b9'
+    outputCurrencyId = '0x215D70d3eAE91f9682A97DB8f377586A24E5F0db'
   }
   if(inputCurrencyId == '')
   {
-    inputCurrencyId = '0x23E8B6A3f6891254988B84Da3738D2bfe5E703b9'
+    inputCurrencyId = '0x215D70d3eAE91f9682A97DB8f377586A24E5F0db'
   }
   const inputCurrency = useCurrency(inputCurrencyId)
   const outputCurrency = useCurrency(outputCurrencyId)
@@ -214,7 +214,7 @@ export function useDerivedSwapInfo(): {
   ]
 
   if (balanceIn && amountIn && balanceIn.lessThan(amountIn)) {
-    inputError = 'Insufficient ' + amountIn.currency.symbol === 'ETH' ? 'MATIC' : amountIn.currency.symbol + ' balance'
+    inputError = 'Insufficient ' + amountIn.currency.symbol === 'ETH' ? 'FTM' : amountIn.currency.symbol + ' balance'
   }
 
   return {

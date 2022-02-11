@@ -129,10 +129,10 @@ function CurrencyRow({
       <CurrencyLogo currency={currency} size={'24px'} />
       <Column>
         <Text title={currency.name} fontWeight={500}>
-          {currency.symbol === 'ETH' ? 'MATIC' : currency.symbol}
+          {currency.symbol === 'ETH' ? 'FTM' : currency.symbol}
         </Text>
         <TYPE.darkGray ml="0px" fontSize={'12px'} fontWeight={300}>
-          {currency.name === 'Ether' ? 'MATIC' : currency.name} {!isOnSelectedList && customAdded && '• Added by user'}
+          {currency.name === 'Ether' ? 'FTM' : currency.name} {!isOnSelectedList && customAdded && '• Added by user'}
         </TYPE.darkGray>
       </Column>
       <TokenTags currency={currency} />

@@ -9,7 +9,7 @@ import Logo from '../Logo'
 
 export const getTokenLogoURL = (address: string) => {
   let uri;
-  if (address?.toLowerCase() === '0x23E8B6A3f6891254988B84Da3738D2bfe5E703b9'.toLowerCase()) {
+  if (address?.toLowerCase() === '0x215D70d3eAE91f9682A97DB8f377586A24E5F0db'.toLowerCase()) {
     uri = 'https://assets.coingecko.com/coins/images/20505/small/welt.PNG?1637143324'
   }
   if (address?.toLowerCase() === '0x35db0dfb42dfe164a3e4d39f91459878d564fa5b'.toLowerCase()) {

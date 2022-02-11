@@ -207,7 +207,7 @@ export function useDerivedSwapInfo(): {
   ]
 
   if (balanceIn && amountIn && balanceIn.lessThan(amountIn)) {
-    inputError = 'Insufficient ' + amountIn.currency.symbol === 'ETH' ? 'MATIC' : amountIn.currency.symbol + ' balance'
+    inputError = 'Insufficient ' + amountIn.currency.symbol === 'ETH' ? 'FTM' : amountIn.currency.symbol + ' balance'
   }
 
   return {

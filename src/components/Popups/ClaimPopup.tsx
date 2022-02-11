@@ -103,7 +103,7 @@ export default function ClaimPopup() {
           </AutoColumn>
           <AutoColumn style={{ zIndex: 10 }} justify="center">
             <ButtonPrimary padding="8px" borderRadius="8px" width={'fit-content'} onClick={toggleSelfClaimModal}>
-              Claim your WELT tokens
+              Claim your LIQD tokens
             </ButtonPrimary>
           </AutoColumn>
         </StyledClaimPopup>

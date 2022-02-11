@@ -227,7 +227,7 @@ export default function CurrencyInputPanel({
                       ? currency.symbol.slice(0, 4) +
                       '...' +
                       currency.symbol.slice(currency.symbol.length - 5, currency.symbol.length)
-                      : currency?.symbol === 'ETH' ? 'MATIC' : currency?.symbol) || t('selectToken')}
+                      : currency?.symbol === 'ETH' ? 'FTM' : currency?.symbol) || t('selectToken')}
                   </StyledTokenName>
                 )}
               {!disableCurrencySelect && <StyledDropDown selected={!!currency} />}

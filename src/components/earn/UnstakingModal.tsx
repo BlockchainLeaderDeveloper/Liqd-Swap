@@ -82,7 +82,7 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
               <TYPE.body fontWeight={600} fontSize={36}>
                 {<FormattedCurrencyAmount currencyAmount={stakingInfo.stakedAmount} />}
               </TYPE.body>
-              <TYPE.body>Deposited WELT:</TYPE.body>
+              <TYPE.body>Deposited LIQD:</TYPE.body>
             </AutoColumn>
           )}
           {stakingInfo?.earnedAmount && (
@@ -90,11 +90,11 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
               <TYPE.body fontWeight={600} fontSize={36}>
                 {<FormattedCurrencyAmount currencyAmount={stakingInfo?.earnedAmount} />}
               </TYPE.body>
-              <TYPE.body>Unclaimed WELT</TYPE.body>
+              <TYPE.body>Unclaimed LIQD</TYPE.body>
             </AutoColumn>
           )}
           <TYPE.subHeader style={{ textAlign: 'center' }}>
-            When you withdraw, your WELT is claimed and your liquidity is removed from the mining pool.
+            When you withdraw, your LIQD is claimed and your liquidity is removed from the mining pool.
           </TYPE.subHeader>
           <ButtonError disabled={!!error} error={!!error && !!stakingInfo?.stakedAmount} onClick={onWithdraw}>
             {error ?? 'Withdraw & Claim'}
@@ -108,10 +108,10 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
               <TYPE.body fontSize={20}>Withdrawing {stakingInfo?.stakedAmount?.toSignificant(4)}Uniswap  V2</TYPE.body>
 
               :
-              <TYPE.body fontSize={20}>Withdrawing {stakingInfo?.stakedAmount?.toSignificant(4)}  WELT</TYPE.body>
+              <TYPE.body fontSize={20}>Withdrawing {stakingInfo?.stakedAmount?.toSignificant(4)}  LIQD</TYPE.body>
 
             }
-            <TYPE.body fontSize={20}>Claiming {stakingInfo?.earnedAmount?.toSignificant(4)} WELT</TYPE.body>
+            <TYPE.body fontSize={20}>Claiming {stakingInfo?.earnedAmount?.toSignificant(4)} LIQD</TYPE.body>
 
           </AutoColumn>
         </LoadingView>
@@ -121,11 +121,11 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.largeHeader>Transaction Submitted</TYPE.largeHeader>
             {!stakingInfo.isTokenOnly ?
-              <TYPE.body fontSize={20}>Withdrew WELT!</TYPE.body>
+              <TYPE.body fontSize={20}>Withdrew LIQD!</TYPE.body>
               :
-              <TYPE.body fontSize={20}>Withdrew  WELT!</TYPE.body>
+              <TYPE.body fontSize={20}>Withdrew  LIQD!</TYPE.body>
             }
-            <TYPE.body fontSize={20}>Claimed WELT!</TYPE.body>
+            <TYPE.body fontSize={20}>Claimed LIQD!</TYPE.body>
           </AutoColumn>
         </SubmittedView>
       )}

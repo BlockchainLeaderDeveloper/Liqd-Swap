@@ -397,13 +397,13 @@ export default function RemoveLiquidity({
                 Price
               </Text>
               <Text fontWeight={500} fontSize={16} color={theme.text1}>
-                1 {currencyA?.symbol === 'ETH' ? 'MATIC' : currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol === 'ETH' ? 'MATIC' : currencyB?.symbol}
+                1 {currencyA?.symbol === 'ETH' ? 'FTM' : currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol === 'ETH' ? 'FTM' : currencyB?.symbol}
               </Text>
             </RowBetween>
             <RowBetween>
               <div />
               <Text fontWeight={500} fontSize={16} color={theme.text1}>
-                1 {currencyB?.symbol === 'ETH' ? 'MATIC' : currencyB?.symbol} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {currencyA?.symbol === 'ETH' ? 'MATIC' : currencyA?.symbol}
+                1 {currencyB?.symbol === 'ETH' ? 'FTM' : currencyB?.symbol} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {currencyA?.symbol === 'ETH' ? 'FTM' : currencyA?.symbol}
               </Text>
             </RowBetween>
           </>
@@ -552,7 +552,7 @@ export default function RemoveLiquidity({
                       <RowFixed>
                         <CurrencyLogo currency={currencyA} style={{ marginRight: '12px' }} />
                         <Text fontSize={24} fontWeight={500} id="remove-liquidity-tokena-symbol">
-                          {currencyA?.symbol === 'ETH' ? 'MATIC' : currencyA?.symbol}
+                          {currencyA?.symbol === 'ETH' ? 'FTM' : currencyA?.symbol}
                         </Text>
                       </RowFixed>
                     </RowBetween>
@@ -563,7 +563,7 @@ export default function RemoveLiquidity({
                       <RowFixed>
                         <CurrencyLogo currency={currencyB} style={{ marginRight: '12px' }} />
                         <Text fontSize={24} fontWeight={500} id="remove-liquidity-tokenb-symbol">
-                          {currencyB?.symbol === 'ETH' ? 'MATIC' : currencyB?.symbol}
+                          {currencyB?.symbol === 'ETH' ? 'FTM' : currencyB?.symbol}
                         </Text>
                       </RowFixed>
                     </RowBetween>
@@ -574,14 +574,14 @@ export default function RemoveLiquidity({
                             to={`/remove/${currencyA === ETHER ? WETH[chainId].address : currencyIdA}/${currencyB === ETHER ? WETH[chainId].address : currencyIdB
                               }`}
                           >
-                            Receive WMATIC
+                            Receive WFTM
                           </StyledInternalLink>
                         ) : oneCurrencyIsWETH ? (
                           <StyledInternalLink
                             to={`/remove/${currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'ETH' : currencyIdA
                               }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'ETH' : currencyIdB}`}
                           >
-                            Receive MATIC
+                            Receive FTM
                           </StyledInternalLink>
                         ) : null}
                       </RowBetween>
@@ -640,13 +640,13 @@ export default function RemoveLiquidity({
                 <RowBetween>
                   Price:
                   <div>
-                    1 {currencyA?.symbol === 'ETH' ? 'MATIC' : currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol === 'ETH' ? 'MATIC' : currencyB?.symbol}
+                    1 {currencyA?.symbol === 'ETH' ? 'FTM' : currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol === 'ETH' ? 'FTM' : currencyB?.symbol}
                   </div>
                 </RowBetween>
                 <RowBetween>
                   <div />
                   <div>
-                    1 {currencyB?.symbol === 'ETH' ? 'MATIC' : currencyB?.symbol} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {currencyA?.symbol === 'ETH' ? 'MATIC' : currencyA?.symbol}
+                    1 {currencyB?.symbol === 'ETH' ? 'FTM' : currencyB?.symbol} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {currencyA?.symbol === 'ETH' ? 'FTM' : currencyA?.symbol}
                   </div>
                 </RowBetween>
               </div>

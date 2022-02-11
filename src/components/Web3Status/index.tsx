@@ -186,18 +186,18 @@ function Web3StatusInner() {
       ethereum.request({
         method: 'wallet_addEthereumChain',
         params: [{
-          "chainId": "0x89",
-          "chainName": "Matic Network",
-          "rpcUrls": ["https://rpc-mainnet.maticvigil.com/"],
+          "chainId": "0xfa",
+          "chainName": "Fantom Opera",
+          "rpcUrls": ["https://rpc.ftm.tools/"],
           "iconUrls": [
             "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png"
           ],
           "blockExplorerUrls": [
-            "https://polygonscan.com/"
+            "https://ftmscan.com/"
           ],
           "nativeCurrency": {
-            "name": "Matic Token",
-            "symbol": "MATIC",
+            "name": "FTM Token",
+            "symbol": "FTM",
             "decimals": 18
           }
         }], // you must have access to the specified account
@@ -245,7 +245,7 @@ function Web3StatusInner() {
         }
         {
           error instanceof UnsupportedChainIdError && (ethereum && ethereum.isMetaMask) && <Web3StatusConnect id="connect-wallet" onClick={addMaticToMetamask} faded={!account}>
-            <Text>{t('Switch to Matic')}</Text>
+            <Text>{t('Switch to FTM')}</Text>
           </Web3StatusConnect>
         }
       </div>

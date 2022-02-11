@@ -234,7 +234,7 @@ export default function Manage({
     valueOfTotalStakedAmountInWETH = new TokenAmount(
       WETH,
       JSBI.divide(
-        JSBI.multiply(
+        JSBI.divide(
           JSBI.multiply(stakingInfo.totalStakedAmount.raw, stakingTokenPair.reserveOf(WETH).raw),
           JSBI.BigInt(2) // this is b/c the value of LP shares are ~double the value of the WETH they entitle owner to
         ),
@@ -244,7 +244,7 @@ export default function Manage({
     valueOfMyStakedAmountInWETH = new TokenAmount(
       WETH,
       JSBI.divide(
-        JSBI.multiply(
+        JSBI.divide(
           JSBI.multiply(stakingInfo.stakedAmount.raw, stakingTokenPair.reserveOf(WETH).raw),
           JSBI.BigInt(2) // this is b/c the value of LP shares are ~double the value of the WETH they entitle owner to
         ),
@@ -350,7 +350,7 @@ export default function Manage({
                 ? Math.ceil(parseFloat(valueOfTotalStakedAmountInUSDC.toFixed(6)) * 10000000) / 10000000 !== 0
                   ? `$${valueOfTotalStakedAmountInUSDC.toFixed(4, { groupSeparator: ',' })}`
                   : `$${valueOfTotalStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}`
-                : `${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} MATIC`}
+                : `${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} FTM`}
             </TYPE.body>
           </AutoColumn>
         </PoolData>
@@ -433,7 +433,7 @@ export default function Manage({
                   <TYPE.white fontSize={36} fontWeight={600}>
                     {valueOfMyStakedAmountInUSDC
                       ? `$${valueOfMyStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}`
-                      : `${valueOfMyStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} MATIC`}
+                      : `${valueOfMyStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} FTM`}
                   </TYPE.white>
                   <TYPE.white>
                     {!stakingInfo?.isTokenOnly ?

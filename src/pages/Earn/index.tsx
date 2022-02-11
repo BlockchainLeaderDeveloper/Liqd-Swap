@@ -67,7 +67,7 @@ export default function Earn() {
               </RowBetween>
               <RowBetween>
                 <TYPE.white fontSize={14}>
-                  Deposit your LP tokens to receive WELT.
+                  Deposit your LP tokens to receive LIQD.
                 </TYPE.white>
               </RowBetween>{' '}
               <ExternalLink

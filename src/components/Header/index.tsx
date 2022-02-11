@@ -297,9 +297,10 @@ export const StyledMenuButton = styled.button`
 const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.RINKEBY]: 'Rinkeby',
   [ChainId.ROPSTEN]: 'Ropsten',
-  [ChainId.MATIC]: 'Matic',
+  [ChainId.MATIC]: 'MATIC',
   [ChainId.GÖRLI]: 'Görli',
   [ChainId.KOVAN]: 'Kovan',
+  [ChainId.FTM]: 'FTM',
 }
 
 export default function Header() {
@@ -388,7 +389,7 @@ export default function Header() {
             <UNIWrapper onClick={toggleClaimModal}>
               <UNIAmount active={!!account && !availableClaim} style={{ pointerEvents: 'auto' }}>
                 <TYPE.white padding="0 2px">
-                  {claimTxn && !claimTxn?.receipt ? <Dots>Claiming WELT</Dots> : 'Claim UNI'}
+                  {claimTxn && !claimTxn?.receipt ? <Dots>Claiming LIQD</Dots> : 'Claim UNI'}
                 </TYPE.white>
               </UNIAmount>
               <CardNoise />
@@ -416,7 +417,7 @@ export default function Header() {
                     </TYPE.white>
                   </HideSmall>
                 )}
-                WELT
+                LIQD
               </UNIAmount>
               <CardNoise />
             </UNIWrapper>
@@ -424,7 +425,7 @@ export default function Header() {
           <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
             {account && userEthBalance ? (
               <BalanceText style={{ flexShrink: 0 }} pl="0.75rem" pr="0.5rem" fontWeight={500}>
-                {userEthBalance?.toSignificant(4)} MATIC
+                {userEthBalance?.toSignificant(4)} FTM
               </BalanceText>
             ) : null}
             <Web3Status />

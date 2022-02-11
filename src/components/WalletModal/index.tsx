@@ -298,7 +298,7 @@ export default function WalletModal({
           <HeaderRow>{error instanceof UnsupportedChainIdError ? 'Wrong Network' : 'Error connecting'}</HeaderRow>
           <ContentWrapper>
             {error instanceof UnsupportedChainIdError ? (
-              <h5>Please connect to the appropriate MATIC network.</h5>
+              <h5>Please connect to the appropriate Fantom network.</h5>
             ) : (
                 'Error connecting. Try refreshing the page.'
               )}

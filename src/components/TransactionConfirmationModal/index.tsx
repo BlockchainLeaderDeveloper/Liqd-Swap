@@ -109,7 +109,7 @@ function TransactionSubmittedContent({
             <ButtonLight mt="12px" padding="6px 12px" width="fit-content" onClick={addToken}>
               {!success ? (
                 <RowFixed>
-                  Add {currencyToAdd.symbol === 'UNI-V2' ? 'WELT LP' : currencyToAdd.symbol} to Metamask <StyledLogo src={MetaMaskLogo} />
+                  Add {currencyToAdd.symbol === 'UNI-V2' ? 'LIQD LP' : currencyToAdd.symbol} to Metamask <StyledLogo src={MetaMaskLogo} />
                 </RowFixed>
               ) : (
                   <RowFixed>

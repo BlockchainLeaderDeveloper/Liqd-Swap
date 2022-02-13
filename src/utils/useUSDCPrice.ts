@@ -23,8 +23,9 @@ export default function useUSDCPrice(currency?: Currency): Price | undefined {
     ],
     [chainId, currency, wrapped]
   )
+  console.log('111',tokenPairs )
   const [[ethPairState, ethPair], [usdcPairState, usdcPair], [usdcEthPairState, usdcEthPair]] = usePairs(tokenPairs)
-
+  
   return useMemo(() => {
     if (!currency || !wrapped || !chainId) {
       return undefined

@@ -76,7 +76,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
   }, [onDismiss])
 
   // pair contract for this token to be staked
-    const dummyPair = (stakingInfo.name !== 'WELT-USDC'  ?
+    const dummyPair = (stakingInfo.name !== 'USDC-FTM'  ?
       new Pair(new TokenAmount(stakingInfo.tokens[0], '0'), new TokenAmount(stakingInfo.tokens[1], '0')) //add
       :
       new Pair(new TokenAmount(stakingInfo.tokens[0], '0'), new TokenAmount(stakingInfo.baseToken[0], '0')) //add
@@ -96,10 +96,10 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
   async function onStake() {
     setAttempting(true)
     if (stakingContract && parsedAmount && deadline) {
-      //  console.log("ApprovalState.APPROVED", approval, ApprovalState.APPROVED);
+     
       if (approval === ApprovalState.APPROVED) {
-        //   console.log('amount',parsedAmount.raw.toString(16))
-        await stakingContract.stake(`0x${parsedAmount.raw.toString(16)}`, { gasLimit: 6000000 })
+       
+        await stakingContract.stake(`0x${parsedAmount.raw.toString(16)}`, { gasLimit: 1000000 })
         .then((response: TransactionResponse) => {
           addTransaction(response, {
             summary: `Deposit liquidity`
@@ -121,7 +121,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
             signatureData.v,
             signatureData.r,
             signatureData.s,
-            { gasLimit: 6000000 }
+            { gasLimit: 1000000 }
           )
           
           .then((response: TransactionResponse) => {
@@ -173,7 +173,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
       { name: 'verifyingContract', type: 'address' }
     ]
     const domain = {
-      name: 'Uniswap V2',
+      name: 'Spooky LP',
       version: '1',
       chainId: chainId,
       verifyingContract: pairContract.address

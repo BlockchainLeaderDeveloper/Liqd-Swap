@@ -2,28 +2,29 @@ import { Currency, ETHER, Token } from '@uniswap/sdk'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
-import EthereumLogo from '../../assets/images/ethereum-logo.png'
+import EthereumLogo from '../../assets/images/FTM.png'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import Logo from '../Logo'
 
 export const getTokenLogoURL = (address: string) => {
   let uri;
-  if (address?.toLowerCase() === '0x215D70d3eAE91f9682A97DB8f377586A24E5F0db'.toLowerCase()) {
-    uri = 'https://assets.coingecko.com/coins/images/20505/small/welt.PNG?1637143324'
+  if (address?.toLowerCase() === '0xC4A319dcd4599eb7B539e9B7FfD24e52eA254669'.toLowerCase()) {
+    uri = 'https://gateway.pinata.cloud/ipfs/QmRrrqSaAN3Q2UzghowjNxa1pBQm3GGFANknHcaLQcDAGS'
   }
-  if (address?.toLowerCase() === '0x35db0dfb42dfe164a3e4d39f91459878d564fa5b'.toLowerCase()) {
-    uri = 'https://ipfs.io/ipfs/QmaVGccs1Koz8UPUELrLoAwWdGMSL1QDe9nQ1zHShGe7Cj'
+  if (address?.toLowerCase() === '0x04068da6c83afcfa0e13ba15a6696662335d5b75'.toLowerCase()) {
+    uri = 'https://ftmscan.com/token/images/USDC_32.png'
   }
   
-  if (address?.toLowerCase() === '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270') {
-    address = '0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0'
+  
+  if (address?.toLowerCase() === '0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83') {
+      uri = 'https://assets.spookyswap.finance/tokens/FTM.png'
   }
-  if (address?.toLowerCase() === '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063') {
-    uri = 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png'
+  if (address?.toLowerCase() === '0x049d68029688eabf473097a2fc38ef61633a3c7a') {
+    uri = 'https://assets.spookyswap.finance/tokens/fUSDT.png'
   }
-  if (address === '0x2C89bbc92BD86F8075d1DEcc58C7F4E0107f286b') {
-    uri = 'https://assets.coingecko.com/coins/images/12559/small/coin-round-red.png?1604021818'
+  if (address === '0x74b23882a30290451A17c44f4F05243b6b58C76d') {
+    uri = 'https://assets.spookyswap.finance/tokens/wETH.png'
   }
   if (address === '0xB85517b87BF64942adf3A0B9E4c71E4Bc5Caa4e5') {
     uri = 'https://assets.coingecko.com/coins/images/4001/small/Fantom.png?1558015016'
@@ -119,8 +120,8 @@ export const getTokenLogoURL = (address: string) => {
     uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/dg.jpg'
   }
 
-  if (address?.toLowerCase() === '0x3e121107F6F22DA4911079845a470757aF4e1A1b'.toLowerCase()) {
-    uri = 'https://avatars.githubusercontent.com/u/56005256?s=200&v=4'
+  if (address?.toLowerCase() === '0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e'.toLowerCase()) {
+    uri = 'https://assets.spookyswap.finance/tokens/DAI.png'
   }
 
   if (address?.toLowerCase() === '0x104592a158490a9228070E0A8e5343B499e125D0'.toLowerCase()) {

@@ -2,10 +2,13 @@ import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@uniswa
 import { useMemo } from 'react'
 import {
   UNI,
-  WELT,
+  LIQD,
 
   USDC,
-  FTM
+  FTM,
+  FUSDT,
+  wETH,
+  DAI
 } from '../../constants'
 import { STAKING_REWARDS_INTERFACE, VAULT_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
@@ -31,27 +34,93 @@ export const STAKING_REWARDS_INFO: {
 } = {
   [ChainId.FTM]: [//TODO: FTM
 
+        {
+      tokens: [USDC,FTM],
+      stakingRewardAddress: '0xf53a04D4A06860f01391B71FC575aBa5d249E9a1',
+      ended: false,
+
+      name: 'USDC-FTM',
+      lp: '0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c',
+      baseToken: [FTM]
+      //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
+    },
+    {
+      tokens: [FTM,LIQD],
+      stakingRewardAddress: '0xaAac25EAEc5DFf54cE720A6019EB3EE8BB93Da8F',
+      ended: false,
+
+      name: 'FTM-LIQD',
+      lp: '0x0550a63b10982cf23aa4ead45abeba6270b71cf1',
+      baseToken: [LIQD]
+      //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
+    },
+
+    {
+      tokens: [FUSDT,FTM],
+      stakingRewardAddress: '0xc73dF9AF68F7d749ff446A7640A2d93e20BFB1d4',
+      ended: false,
+
+      name: 'FUSDT-FTM',
+      lp: '0x5965e53aa80a0bcf1cd6dbdd72e6a9b2aa047410',
+      baseToken: [FTM]
+    },
+    {
+      tokens: [FTM,wETH],
+      stakingRewardAddress: '0x913D966B0087dEe1d260009a4Df4A3C79a04FD6F',
+      ended: false,
+
+      name: 'FTM-WETH',
+      lp: '0xf0702249f4d3a25cd3ded7859a165693685ab577',
+      baseToken: [wETH]
+    },
+    {
+      tokens: [FTM,DAI],
+      stakingRewardAddress: '0x3Ea7B7F4fe826819fbB60C7ccE7941D8ceb58F54',
+      ended: false,
+
+      name: 'FTM-DAI',
+      lp: '0xe120ffbda0d14f3bb6d6053e90e63c572a66a428',
+      baseToken: [DAI]
+    },
     // {
-    //   tokens: [WELT, WMATIC],
-    //   stakingRewardAddress: '0x44A8E1e56F5c56f601F55c1B5AFEcC7BeB3A8392',  //0x0BA25dFFB326e89E83fDbc1995C1a12E7F929D6f
+    //   tokens: [FUSDT,FTM],
+    //   stakingRewardAddress: '',
     //   ended: false,
 
-    //   name: 'WELT-MATIC',
-    //   lp: '0xe273d3925f6dc6ffedf7aa082594653376a2d38d',
-    //   baseToken: [WMATIC]
+    //   name: 'FUSDT-FTM',
+    //   lp: '',
+    //   baseToken: [LIQD]
+    // },
+    // {
+    //   tokens: [FUSDT,FTM],
+    //   stakingRewardAddress: '',
+    //   ended: false,
+
+    //   name: 'FUSDT-FTM',
+    //   lp: '',
+    //   baseToken: [LIQD]
+    // },
+    // {
+    //   tokens: [USDC,FTM],
+    //   stakingRewardAddress: '0xf53a04D4A06860f01391B71FC575aBa5d249E9a1',  //0x0BA25dFFB326e89E83fDbc1995C1a12E7F929D6f
+    //   ended: false,
+
+    //   name: 'USDC-FTM',
+    //   lp: '0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c',
+    //   baseToken: [FTM]
     //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
     // },
     
-    {
-      tokens: [WELT, FTM],
-      stakingRewardAddress: '0xf9809c1C302AC583E904056b3b9268bE829d4741',  //0x0BA25dFFB326e89E83fDbc1995C1a12E7F929D6f
-      ended: false,
+    // {
+    //   tokens: [WELT, FTM],
+    //   stakingRewardAddress: '0xf9809c1C302AC583E904056b3b9268bE829d4741',  //0x0BA25dFFB326e89E83fDbc1995C1a12E7F929D6f
+    //   ended: false,
 
-      name: 'WELT-USDC',
-      lp: '0x55e49f32fbba12aa360eec55200dafd1ac47aaed',
-      baseToken: [USDC]
-      //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    },
+    //   name: 'WELT-USDC',
+    //   lp: '0x55e49f32fbba12aa360eec55200dafd1ac47aaed',
+    //   baseToken: [USDC]
+    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
+    // },
 
     // {
     //   tokens: [WELT, WMATIC],
@@ -61,36 +130,6 @@ export const STAKING_REWARDS_INFO: {
     //   name: 'WELT-DAI',
     //   lp: '0xaac32d2ac5647776c4896da319697d0b6e6012c0',
     //   baseToken: [DAI]
-    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    // },
-    // {
-    //   tokens: [WELT, WMATIC],
-    //   stakingRewardAddress: '0x5269a75C942A5aC7556FF20dBc96D2257bD08C2D',  //0x0BA25dFFB326e89E83fDbc1995C1a12E7F929D6f
-    //   ended: false,
-
-    //   name: 'WELT-ETHER',
-    //   lp: '0x61bdfa009a7b3ab35dea70320e01b6352a88068d',
-    //   baseToken: [ETHER]
-    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    // },
-    // {
-    //   tokens: [WELT, WMATIC],
-    //   stakingRewardAddress: '0xF3F5Ba5d084B01A1319Df033408EEf827FDD7802',  //0x0BA25dFFB326e89E83fDbc1995C1a12E7F929D6f
-    //   ended: false,
-
-    //   name: 'WELT-AVAX',
-    //   lp: '0x4298ea463296752de37735581ab114de280eefe3',
-    //   baseToken: [AVAX]
-    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    // },
-    // {
-    //   tokens: [WELT, WMATIC],
-    //   stakingRewardAddress: '0x90f791F7f1CeE13B0F29234ff9F4C0b7F429A310',  //0x0BA25dFFB326e89E83fDbc1995C1a12E7F929D6f
-    //   ended: false,
-
-    //   name: 'WELT-FTM',
-    //   lp: '0x5b9bba5ec49b67bae2f65df814b779fc108d4cb4',
-    //   baseToken: [FTM]
     //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
     // },
 
@@ -119,75 +158,7 @@ export const STAKING_REWARDS_INFO: {
     //   lp: '0x23e8b6a3f6891254988b84da3738d2bfe5e703b9',
     //   baseToken: [WELT]
     //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    // },
-    
-    // NFT test
-    // {
-    //   tokens: [SPYRIT, WMATIC],
-    //   stakingRewardAddress: '0x60795Bc5B04c340208a1eAf14fED50957c208661',
-    //   ended: false,
-    //   isNftToken :true,
-
-    //   name: 'NFT(SPYRIT)',
-    //   lp: '0x35dB0dfb42Dfe164A3e4d39F91459878D564fa5B',
-    //   baseToken: SPYRIT
-    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    // },
-    // {
-    //   tokens: [WMATIC, SPYRIT],
-    //   stakingRewardAddress: '0x60795Bc5B04c340208a1eAf14fED50957c208661',
-    //   ended: false,
-    //   isNftToken :true,
-
-    //   name: 'NFT(MATIC)',
-    //   lp: '0x0000000000000000000000000000000000001010',
-    //   baseToken: SPYRIT
-    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    // },
-
-    // {
-    //   tokens: [$L1, USDC],
-    //   stakingRewardAddress: '0x91BDD1979889D86c8882dD8eb4e45A42d82e02b8',
-    //   ended: false,
-
-    //   name: '',
-    //   lp: '',
-    //   baseToken: USDC
-    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    // },
-
-    // {
-    //   tokens: [SPYRIT, WMATIC],
-    //   stakingRewardAddress: '0x91BDD1979889D86c8882dD8eb4e45A42d82e02b8',
-    //   ended: false,
-
-    //   name: '',
-    //   lp: '',
-    //   baseToken: WMATIC
-    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    // },
-
-    // {
-    //   tokens: [LT, USDC],
-    //   stakingRewardAddress: '0x7A318B03E6a319Ae17200e5ebF98Ef9D3c72DD94',
-    //   ended: false,
-
-    //   name: 'LT-USDC',
-    //   lp: '0xe649Adb69E3631BA6359903feFe369fF418CaC7f',
-    //   baseToken: USDC
-    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    // },
-
-    // {
-    //   tokens: [WMATIC, USDC],
-    //   stakingRewardAddress: '0x2D79Ed676da698FC74162A5f522b73053fE9C9c3',
-    //   ended: false,
-
-    //   name: 'WMATIC-USDC',
-    //   lp: '0x6e7a5FAFcec6BB1e78bAE2A1F0B612012BF14827',
-    //   baseToken: WMATIC
-    //   //STAKINGREWARDSFACTORY- 0x5D490e48417Dd2F6165CEB3b2c04352675278998
-    // },
+    // }
   ]
 }
 
@@ -247,7 +218,7 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
         : [],
     [chainId, pairToFilterBy]
   )
- // console.log('info',info)
+
   
 
   const uni = chainId ? UNI[chainId] : undefined
@@ -262,6 +233,7 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
   const balances = useMultipleContractSingleData(rewardsAddresses, STAKING_REWARDS_INTERFACE, 'balanceOf', accountArg)
   const earnedAmounts = useMultipleContractSingleData(rewardsAddresses, STAKING_REWARDS_INTERFACE, 'earned', accountArg)
   const totalSupplies = useMultipleContractSingleData(rewardsAddresses, STAKING_REWARDS_INTERFACE, 'totalSupply')
+
 
   
   // tokens per second, constants
@@ -279,9 +251,12 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
     undefined,
     NEVER_RELOAD
   )
+  console.log('STAKING_REWARDS_INTERFACE',STAKING_REWARDS_INTERFACE);
+  console.log('balances',balances);
 
   const harvestCallFee = useMultipleContractSingleData(vaultAddresses, VAULT_INTERFACE, 'calculateHarvestWeltRewards')
 
+  console.log('harvestCallFee',harvestCallFee)
   return useMemo(() => {
     if (!chainId || !uni) return []
 
@@ -307,9 +282,10 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
         rewardRateState &&
         !rewardRateState.loading &&
         periodFinishState &&
-        !periodFinishState.loading &&
-        harvestCallFeeState &&
-        !harvestCallFeeState.loading
+        !periodFinishState.loading 
+        // &&
+        // harvestCallFeeState &&
+        // !harvestCallFeeState.loading
       ) {
         if (
           balanceState?.error ||

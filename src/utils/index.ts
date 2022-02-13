@@ -21,10 +21,10 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   1: '',
   3: 'ropsten.',
   137: 'explorer-mainnet.maticvigil.com',
+  250:'ftmscan.com',
   4: 'rinkeby.',
   5: 'goerli.',
-  42: 'kovan.',
-  250:'ftm'
+  42: 'kovan.'
 }
 
 export function getEtherscanLink(

@@ -16,7 +16,6 @@ type ChainTokenList = {
 export const FRAX = new Token(ChainId.MATIC, '0x104592a158490a9228070E0A8e5343B499e125D0', 18, 'FRAX', 'FRAX')
 export const FXS = new Token(ChainId.MATIC, '0x3e121107F6F22DA4911079845a470757aF4e1A1b', 18, 'FXS', 'Frax Shares')
 // export const SPYRIT = new Token(ChainId.MATIC, '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174', 4, 'SPYRIT', 'Autonio')
-export const USDC = new Token(ChainId.MATIC, '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174', 6, 'USDC', 'USD Coin (PoS)')
 export const DEV = new Token(ChainId.MATIC, '0xdd667bf15e34b126eaa53198c207e5390374bc1a', 4, 'DEV', 'Developer')
 export const ETHER = new Token(ChainId.MATIC, '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619', 18, 'ETH', 'Ether')
 
@@ -34,13 +33,19 @@ export const WMATIC = new Token(ChainId.MATIC, '0x0d500B1d8E8eF31E21C99d1Db9A644
 export const LT = new Token(ChainId.MATIC, '0x84F4A604Ae84326A32EF4A80Ce25c55Eb6288C97', 18, 'LiquidTest', 'LT')
 //export const SPYRIT = new Token(ChainId.MATIC, '0x35db0dfb42dfe164a3e4d39f91459878d564fa5b', 5, 'SPYRIT', 'SpyritCoin')
 export const WELT = new Token(ChainId.MATIC, '0x23E8B6A3f6891254988B84Da3738D2bfe5E703b9', 18, 'WELT', 'FEBWELT')
-export const FTM = new Token(ChainId.MATIC, '0xB85517b87BF64942adf3A0B9E4c71E4Bc5Caa4e5', 18, 'FTM', 'Fantom Token')
+
 export const AVAX = new Token(ChainId.MATIC, '0x2C89bbc92BD86F8075d1DEcc58C7F4E0107f286b', 18, 'AVAX', 'Avalanche Token')
-export const DAI = new Token(ChainId.MATIC, '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063', 18, 'DAI', 'Dai Stablecoin')
 
-export const LIQD = new Token(ChainId.FTM, '0x215D70d3eAE91f9682A97DB8f377586A24E5F0db', 18, 'LIQD', 'LIQD')
+
+export const DAI = new Token(ChainId.FTM, '0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e', 18, 'DAI', 'Dai Stablecoin')
+
+export const FTM = new Token(ChainId.FTM, '0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83', 18, 'FTM', 'Fantom Token')
+export const LIQD = new Token(ChainId.FTM, '0xC4A319dcd4599eb7B539e9B7FfD24e52eA254669', 18, 'LIQD', 'LIQD')
 export const fUSD = new Token(ChainId.FTM, '0xad84341756bf337f5a0164515b1f6f993d194e1f', 18, 'FUSD', 'fUSD')
+export const USDC = new Token(ChainId.FTM, '0x04068da6c83afcfa0e13ba15a6696662335d5b75', 6, 'USDC', 'USD Coin (PoS)')
+export const FUSDT = new Token(ChainId.FTM, '0x049d68029688eabf473097a2fc38ef61633a3c7a', 6, 'FUSDT', 'Frapped USDT')
 
+export const wETH = new Token(ChainId.FTM, '0x74b23882a30290451A17c44f4F05243b6b58C76d', 18, 'WETH', 'Ethereum')
 
 // Block time here is slightly higher (~1s) than average in order to avoid ongoing proposals past the displayed time
 export const AVERAGE_BLOCK_TIME_IN_SECS = 13
@@ -61,7 +66,7 @@ export const UNI: { [chainId in ChainId]: Token } = {
   // [ChainId.MATIC]: new Token(ChainId.MATIC, '0xad684e79CE4b6D464f2Ff7c3FD51646892e24b96', 4, 'SPYRIT', 'Autonio'),
  // [ChainId.MATIC]: new Token(ChainId.MATIC, '0x35db0dfb42dfe164a3e4d39f91459878d564fa5b', 5, 'SPYRIT', 'SpyritCoin')
   [ChainId.MATIC]: new Token(ChainId.MATIC, '0x23E8B6A3f6891254988B84Da3738D2bfe5E703b9', 18, 'WELT', 'FEBWELT'),
-  [ChainId.FTM]: new Token(ChainId.FTM, '0x215D70d3eAE91f9682A97DB8f377586A24E5F0db', 18, 'UNI', 'Uniswap'),
+  [ChainId.FTM]: new Token(ChainId.FTM, '0xC4A319dcd4599eb7B539e9B7FfD24e52eA254669', 18, 'UNI', 'Uniswap'),
 }
 
 export const COMMON_CONTRACT_NAMES: { [address: string]: string } = {

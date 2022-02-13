@@ -88,6 +88,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
   const token = currency0 === ETHER ? token1 : token0
   const WETH = currency0 === ETHER ? token0 : token1
   const backgroundColor = useColor(token)
+  console.log('background',backgroundColor)
 
   const totalSupplyOfStakingToken = useTotalSupply(stakingInfo.stakedAmount.token)
   const [, stakingTokenPair] = usePair(...stakingInfo.tokens)
@@ -149,6 +150,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
     align-items: flex-end;
   `};
 `
+console.log('stakinginfo',stakingInfo)
 //  console.log('valueOfTotalStakedAmountInUSDC', valueOfTotalStakedAmountInUSDC?.toFixed(4, { groupSeparator: ',' }))
   return (
     show ?
@@ -170,7 +172,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
               </>
               :
               !stakingInfo.isTokenOnly && !stakingInfo.isNftToken ?
-                stakingInfo.name === 'SPYRIT-WFTM' ?
+                stakingInfo.name === 'USDC-FTM' ?
                   <>
                     <DoubleCurrencyLogo currency0={currency0} currency1={currency1} size={24} />
                     <TYPE.white fontWeight={600} fontSize={24} style={{ marginLeft: '8px' }}>
@@ -200,7 +202,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
                     </TYPE.white>
                   </>
           }
-          <StyledInternalLink to={`/WELT/${currencyId(currency0)}/${currencyId(currency1)}/${stakingInfo.stakingRewardAddress}`} style={{ width: '100%' }}>
+          <StyledInternalLink to={`/LIQD/${currencyId(currency0)}/${currencyId(currency1)}/${stakingInfo.stakingRewardAddress}`} style={{ width: '100%' }}>
             <ButtonPrimary padding="8px" borderRadius="8px">
               {isStaking ? 'Manage' : 'Deposit'}
             </ButtonPrimary>

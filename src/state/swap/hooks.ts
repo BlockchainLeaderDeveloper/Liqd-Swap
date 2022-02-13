@@ -128,11 +128,11 @@ export function useDerivedSwapInfo(): {
   } = useSwapState()
   if(outputCurrencyId == '')
   {
-    outputCurrencyId = '0x215D70d3eAE91f9682A97DB8f377586A24E5F0db'
+    outputCurrencyId = '0xC4A319dcd4599eb7B539e9B7FfD24e52eA254669'
   }
   if(inputCurrencyId == '')
   {
-    inputCurrencyId = '0x215D70d3eAE91f9682A97DB8f377586A24E5F0db'
+    inputCurrencyId = '0xC4A319dcd4599eb7B539e9B7FfD24e52eA254669'
   }
   const inputCurrency = useCurrency(inputCurrencyId)
   const outputCurrency = useCurrency(outputCurrencyId)

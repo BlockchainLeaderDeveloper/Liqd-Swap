@@ -72,7 +72,7 @@ const PoolData = styled(DataCard)`
 `
 
 const VoteCard = styled(DataCard)`
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #27ae60 0%, #000000 100%);
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #c14bad 0%, #521414 100%);
   overflow: hidden;
 `
 
@@ -192,7 +192,7 @@ export default function Manage({
   //     }
   //   ]
   // }
-  // console.log("debugStaking", stakingTokenPair)
+  console.log("debugStaking", stakingTokenPair)
   const stakingInfos = useStakingInfo(stakingTokenPair)
   let stakingInfo = stakingInfos?.reduce<any>((memo, staking) => {
     if (staking.stakingRewardAddress === rewardsAddress) {
@@ -207,6 +207,7 @@ export default function Manage({
   if (stakingInfo.length === 0) {
     stakingInfo = undefined;
   }
+  console.log('stakinginfo',stakingInfo,stakingInfos)
 
   // detect existing unstaked LP position to show add button if none found
   const userLiquidityUnstaked = useTokenBalance(account ?? undefined, stakingInfo?.stakedAmount?.token)
@@ -341,7 +342,7 @@ export default function Manage({
             <></>
             :
             !stakingInfo?.isTokenOnly ?
-              stakingInfo?.name === 'WELT-WMATIC' ?
+              stakingInfo?.name === 'USDC-FTM' ?
                 <DoubleCurrencyLogo currency0={currencyA ?? undefined} currency1={currencyB ?? undefined} size={24} />
                 :
                 <DoubleCurrencyLogo currency0={currencyA ?? undefined} currency1={currency2 ?? undefined} size={24} />
@@ -359,7 +360,7 @@ export default function Manage({
               {valueOfTotalStakedAmountInUSDC
                 ? Math.ceil(parseFloat(valueOfTotalStakedAmountInUSDC.toFixed(6))) !== 0
                   ? stakingInfo?.isTokenOnly
-                    ? `$${valueOfTotalStakedAmountInUSDC.toFixed(4, { groupSeparator: ',' })}-${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' })}WELT `
+                    ? `$${valueOfTotalStakedAmountInUSDC.toFixed(4, { groupSeparator: ',' })}-${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' })}LIQD `
                     : `$${valueOfTotalStakedAmountInUSDC.toFixed(4, { groupSeparator: ',' })}-${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' })}LP `
                   : `$${valueOfTotalStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}`
                 : `${valueOfTotalStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} FTM`}
@@ -386,11 +387,11 @@ export default function Manage({
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Step 1. Get {(stakingInfo?.name && stakingInfo?.name !== "" ? stakingInfo.name : "WELT LP")} Liquidity tokens</TYPE.white>
+                <TYPE.white fontWeight={600}>Step 1. Get {(stakingInfo?.name && stakingInfo?.name !== "" ? stakingInfo.name : "LIQD LP")} Liquidity tokens</TYPE.white>
               </RowBetween>
               <RowBetween style={{ marginBottom: '1rem' }}>
                 <TYPE.white fontSize={14}>
-                  {(stakingInfo?.name && stakingInfo?.name !== "" ? stakingInfo.name : "WELT LP") + " tokens are required. Once you've added liquidity to the " + currencyA?.symbol + "-" + currency2?.symbol + " pool you can stake your liquidity tokens " + (stakingInfo?.lp && stakingInfo?.lp !== "" ? " " : " ")}
+                  {(stakingInfo?.name && stakingInfo?.name !== "" ? stakingInfo.name : "LIQD LP") + " tokens are required. Once you've added liquidity to the " + currencyA?.symbol + "-" + currency2?.symbol + " pool you can stake your liquidity tokens " + (stakingInfo?.lp && stakingInfo?.lp !== "" ? " " : " ")}
 
                 </TYPE.white>
               </RowBetween>
@@ -445,7 +446,7 @@ export default function Manage({
                   <TYPE.white fontSize={36} fontWeight={600}>
                     {valueOfMyStakedAmountInUSDC
                       ? stakingInfo?.isTokenOnly
-                        ? `$${valueOfMyStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}-${valueOfMyStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} WELT`
+                        ? `$${valueOfMyStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}-${valueOfMyStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} LIQD`
                         : `$${valueOfMyStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}-${valueOfMyStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} LP`
                       : `${valueOfMyStakedAmountInWETH?.toSignificant(4, { groupSeparator: ',' }) ?? '-'} FTM`}
                   </TYPE.white>
@@ -456,7 +457,7 @@ export default function Manage({
                         :
                         !stakingInfo?.isTokenOnly ?
                           <>
-                            {stakingInfo?.name && stakingInfo?.name && stakingInfo.name !== '' ? stakingInfo.name : 'WELT LP ' + ((currencyA?.symbol !== undefined ? currencyA?.symbol : '') + '-' + (currencyB?.symbol !== undefined ? currencyB?.symbol : ''))}
+                            {stakingInfo?.name && stakingInfo?.name && stakingInfo.name !== '' ? stakingInfo.name : 'LIQD LP ' + ((currencyA?.symbol !== undefined ? currencyA?.symbol : '') + '-' + (currencyB?.symbol !== undefined ? currencyB?.symbol : ''))}
 
                           </>
                           :
@@ -478,7 +479,7 @@ export default function Manage({
                 <AutoColumn gap="sm">
                   <RowBetween>
                     <div>
-                      <TYPE.black>Your unclaimed WELT</TYPE.black>
+                      <TYPE.black>Your unclaimed LIQD</TYPE.black>
                     </div>
                     {stakingInfo?.earnedAmount && JSBI.notEqual(BIG_INT_ZERO, stakingInfo?.earnedAmount?.raw) && (
                       <ButtonEmpty
@@ -511,7 +512,7 @@ export default function Manage({
                         {stakingInfo?.rewardRate
                           ?.multiply((60 * 60 * 24).toString())
                           ?.toSignificant(4, { groupSeparator: ',' }) ?? '-'}
-                        {' WELT / day'}
+                        {' LIQD / day'}
                       </TYPE.black>
                     }
                   </RowBetween>
@@ -524,7 +525,7 @@ export default function Manage({
                 <AutoColumn gap="sm">
                   <RowBetween>
                     <div>
-                      <TYPE.black>Recent WELT profit</TYPE.black>
+                      <TYPE.black>Recent LIQD profit</TYPE.black>
                     </div>
                     {stakingInfo?.earnedAmount && JSBI.notEqual(BIG_INT_ZERO, stakingInfo?.earnedAmount?.raw) && (
                       <ButtonEmpty
@@ -557,7 +558,7 @@ export default function Manage({
                         {stakingInfo?.rewardRate
                           ?.multiply((60 * 60 * 24).toString())
                           ?.toSignificant(4, { groupSeparator: ',' }) ?? '-'}
-                        {' WELT / day'}
+                        {' LIQD / day'}
                       </TYPE.black>
                     }
                   </RowBetween>
@@ -570,7 +571,7 @@ export default function Manage({
           <span role="img" aria-label="wizard-icon" style={{ marginRight: '8px' }}>
             ⭐️
           </span>
-          When you withdraw, the contract will automatically claim WELT on your behalf!
+          When you withdraw, the contract will automatically claim LIQD on your behalf!
         </TYPE.main>
 
         {!showAddLiquidityButton && (
@@ -604,7 +605,7 @@ export default function Manage({
         )}
         {!userLiquidityUnstaked ? null : userLiquidityUnstaked.equalTo('0') ? null : (
           !stakingInfo?.isNftToken ?
-            <TYPE.main>{userLiquidityUnstaked.toSignificant(6)} {stakingInfo?.name !== '' ? stakingInfo?.name : 'WELT LP'} tokens available</TYPE.main>
+            <TYPE.main>{userLiquidityUnstaked.toSignificant(6)} {stakingInfo?.name !== '' ? stakingInfo?.name : 'LIQD LP'} tokens available</TYPE.main>
             :
             <></>
         )}

@@ -72,7 +72,7 @@ const PoolData = styled(DataCard)`
 `
 
 const VoteCard = styled(DataCard)`
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #27ae60 0%, #000000 100%);
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #c14bad 0%, #521414 100%);
   overflow: hidden;
 `
 
@@ -192,7 +192,7 @@ export default function Manage({
   //     }
   //   ]
   // }
- // console.log("debugStaking", stakingTokenPair)
+
   const stakingInfos = useStakingInfo(stakingTokenPair)
   let stakingInfo = stakingInfos?.reduce<any>((memo, staking) => {
     if (staking.stakingRewardAddress === rewardsAddress) {
@@ -361,7 +361,7 @@ export default function Manage({
               {stakingInfo?.totalRewardRate
                 ?.multiply((60 * 60 * 24).toString())
                 ?.toFixed(0, { groupSeparator: ',' }) ?? '-'}
-              {' WELT / day'}
+              {' LIQD / day'}
             </TYPE.body>
           </AutoColumn>
         </PoolData>
@@ -374,11 +374,11 @@ export default function Manage({
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Step 1. Get {(stakingInfo?.name && stakingInfo?.name !== "" ? stakingInfo.name : "WELT LP")} Liquidity tokens</TYPE.white>
+                <TYPE.white fontWeight={600}>Step 1. Get {(stakingInfo?.name && stakingInfo?.name !== "" ? stakingInfo.name : "LIQD LP")} Liquidity tokens</TYPE.white>
               </RowBetween>
               <RowBetween style={{ marginBottom: '1rem' }}>
                 <TYPE.white fontSize={14}>
-                  {(stakingInfo?.name && stakingInfo?.name !== "" ? stakingInfo.name : "WELT LP") + " tokens are required. Once you've added liquidity to the " + currencyA?.symbol + "-" + currencyB?.symbol + " pool you can stake your liquidity tokens on " + (stakingInfo?.lp && stakingInfo?.lp !== "" ? "the Aavegotchi page" : "this page.")}
+                  {(stakingInfo?.name && stakingInfo?.name !== "" ? stakingInfo.name : "LIQD LP") + " tokens are required. Once you've added liquidity to the " + currencyA?.symbol + "-" + currencyB?.symbol + " pool you can stake your liquidity tokens on " + (stakingInfo?.lp && stakingInfo?.lp !== "" ? "the Aavegotchi page" : "this page.")}
 
                 </TYPE.white>
               </RowBetween>
@@ -438,7 +438,7 @@ export default function Manage({
                   <TYPE.white>
                     {!stakingInfo?.isTokenOnly ?
                       <>
-                        {/* {stakingInfo?.name && stakingInfo?.name && stakingInfo.name !== '' ? stakingInfo.name : 'WELT LP ' + ((currencyA?.symbol !== undefined ? currencyA?.symbol : '') + '-' + (currencyB?.symbol !== undefined ? currencyB?.symbol : ''))} */}
+                        {/* {stakingInfo?.name && stakingInfo?.name && stakingInfo.name !== '' ? stakingInfo.name : 'LIQD LP ' + ((currencyA?.symbol !== undefined ? currencyA?.symbol : '') + '-' + (currencyB?.symbol !== undefined ? currencyB?.symbol : ''))} */}
 
                       </>
                       :
@@ -461,7 +461,7 @@ export default function Manage({
                 <AutoColumn gap="sm">
                   <RowBetween>
                     <div>
-                      <TYPE.black>Your unclaimed WELT</TYPE.black>
+                      <TYPE.black>Your unclaimed LIQD</TYPE.black>
                     </div>
                     {stakingInfo?.earnedAmount && JSBI.notEqual(BIG_INT_ZERO, stakingInfo?.earnedAmount?.raw) && (
                       <ButtonEmpty
@@ -494,7 +494,7 @@ export default function Manage({
                         {stakingInfo?.rewardRate
                           ?.multiply((60 * 60 * 24).toString())
                           ?.toSignificant(4, { groupSeparator: ',' }) ?? '-'}
-                        {' WELT / day'}
+                        {' LIQD / day'}
                       </TYPE.black>
                     }
                   </RowBetween>
@@ -537,7 +537,7 @@ export default function Manage({
           </DataRow>
         )}
         {!userLiquidityUnstaked ? null : userLiquidityUnstaked.equalTo('0') ? null : (
-          <TYPE.main>{userLiquidityUnstaked.toSignificant(6)} {stakingInfo?.name !== '' ? stakingInfo?.name : 'WELT LP'} tokens available</TYPE.main>
+          <TYPE.main>{userLiquidityUnstaked.toSignificant(6)} {stakingInfo?.name !== '' ? stakingInfo?.name : 'LIQD LP'} tokens available</TYPE.main>
         )}
       </PositionInfo>
     </PageWrapper>

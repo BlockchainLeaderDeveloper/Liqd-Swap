@@ -110,7 +110,7 @@ export default function Earn() {
                             </RowBetween>
                             <RowBetween>
                                 <TYPE.white fontSize={14}>
-                                    Deposit your WELT tokens to receive WELT.
+                                    Deposit your LIQD tokens to receive LIQD.
                                 </TYPE.white>
                             </RowBetween>{' '}
                             <ExternalLink

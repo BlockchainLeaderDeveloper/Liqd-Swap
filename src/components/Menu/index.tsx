@@ -120,27 +120,27 @@ export default function Menu() {
             <Code size={14} />
             Skype
           </MenuItem> */}
-          <MenuItem id="link" href="https://t.me/FabweltToken">
+          <MenuItem id="link" href="https://t.me/n">
             <MessageCircle size={14} />
             Telegram
           </MenuItem>
-          <MenuItem id="link" href="https://Twitter.com/fabwelttoken">
+          <MenuItem id="link" href="https://Twitter.com/n">
             <Twitter size={14} />
             Twitter
           </MenuItem>
-          <MenuItem id="link" href="https://discord.com/invite/Q3cetjFRTG">
+          <MenuItem id="link" href="https://discord.com/invite">
             <BookOpen size={14} />
             Discord
           </MenuItem>
-          <MenuItem id="link" href="https://github.com/Fabwelt">
+          <MenuItem id="link" href="https://github.com/">
             <Code size={14} />
             GitHub
           </MenuItem>
-          <MenuItem id="link" href="https://www.linkedin.com/company/fabwelttoken">
+          <MenuItem id="link" href="https://www.linkedin.com/company/">
             <Linkedin size={14} />
             LinkedIn
           </MenuItem>
-          <MenuItem id="link" href="https://www.facebook.com/Fabwelt/">
+          <MenuItem id="link" href="https://www.facebook.com/">
             <Facebook size={14} />
             FaceBook
           </MenuItem>

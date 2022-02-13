@@ -49,11 +49,11 @@ export function colors(darkMode: boolean): Colors {
 
     // backgrounds / greys
     //autonio ui change 27-02-2021
-    bg1: darkMode ? '#212429' : '#070C12',
+    bg1: darkMode ? '#212429' : '#071d4c',
     //autonio ui change 27-02-2021
-    bg2: darkMode ? '#2F3641' : '#1A1F28',
+    bg2: darkMode ? '#2F3641' : '#0d1833',
     //autonio ui change 27-02-2021
-    bg3: darkMode ? '#40444F' : '#1A1F28',
+    bg3: darkMode ? '#40444F' : '#0d1833',
     bg4: darkMode ? '#565A69' : '#CED0D9',
     bg5: darkMode ? '#6C7284' : '#888D9B',
 
@@ -187,13 +187,13 @@ html, input, textarea, button {
 
   font-display: fallback;
   @font-face{
-    font-family: 'aquire';
+    font-family: monospace;
     src: url('/fonts/AquireBold-8Ma60.otf')format('woff');
   }
 }
 @supports (font-variation-settings: normal) {
   html, input, textarea, button {
-    font-family: 'aquire';
+    font-family: monospace;
   }
 }
 

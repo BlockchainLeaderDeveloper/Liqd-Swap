@@ -14,148 +14,157 @@
   "timestamp": "2021-03-03T00:00:00+00:00",
   "tokens": [
       {
-          "address": "0x215D70d3eAE91f9682A97DB8f377586A24E5F0db",
+          "address": "0xC4A319dcd4599eb7B539e9B7FfD24e52eA254669",
           "chainId": 250,
           "name": "LIQD",
           "symbol": "LIQD",
           "decimals": 18,
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x04068da6c83afcfa0e13ba15a6696662335d5b75/logo.png"
+          "logoURI": "https://gateway.pinata.cloud/ipfs/QmRrrqSaAN3Q2UzghowjNxa1pBQm3GGFANknHcaLQcDAGS"
       },
       {
-          "chainId": 250,
-          "address": "0x078eef5a2fb533e1a4d487ef64b27df113d12c32",
-          "decimals": 18,
-          "name": "fBAND",
-          "symbol": "FBAND",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x078eef5a2fb533e1a4d487ef64b27df113d12c32/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0x27f26f00e1605903645bbabc0a73e35027dccd45",
-          "decimals": 18,
-          "name": "fBNB",
-          "symbol": "FBNB",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x27f26f00e1605903645bbabc0a73e35027dccd45/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0xe1146b9ac456fcbb60644c36fd3f868a9072fc6e",
-          "decimals": 18,
-          "name": "fBTC",
-          "symbol": "FBTC",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0xe1146b9ac456fcbb60644c36fd3f868a9072fc6e/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0x81740d647493a61329e1c574a11ee7577659fb14",
-          "decimals": 18,
-          "name": "fCHF",
-          "symbol": "FCHF",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x81740d647493a61329e1c574a11ee7577659fb14/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0x24d39324cf3697fd9fd78714e8cdeb5df66e3dcd",
-          "decimals": 18,
-          "name": "fCNY",
-          "symbol": "FCNY",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x24d39324cf3697fd9fd78714e8cdeb5df66e3dcd/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0x658b0c7613e890ee50b8c4bc6a3f41ef411208ad",
-          "decimals": 18,
-          "name": "fETH",
-          "symbol": "FETH",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x658b0c7613e890ee50b8c4bc6a3f41ef411208ad/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0xe105621721d1293c27be7718e041a4ce0ebb227e",
-          "decimals": 18,
-          "name": "fEUR",
-          "symbol": "FEUR",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0xe105621721d1293c27be7718e041a4ce0ebb227e/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0xcde58e4b6c7b78b04da664edb0a9752cc5fedbd5",
-          "decimals": 18,
-          "name": "fGBP",
-          "symbol": "FGBP",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0xcde58e4b6c7b78b04da664edb0a9752cc5fedbd5/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0x2202c52c9076a49400aaccf159e1956269eaa673",
-          "decimals": 18,
-          "name": "fGold",
-          "symbol": "FGOLD",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x2202c52c9076a49400aaccf159e1956269eaa673/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0x3b74389bc23057325bab96523dbec8c445f55799",
-          "decimals": 18,
-          "name": "fJPY",
-          "symbol": "FJPY",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x3b74389bc23057325bab96523dbec8c445f55799/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0x2b9c073ec670b70f417bbaf3bbb052aa563a0a23",
-          "decimals": 18,
-          "name": "fKRW",
-          "symbol": "FKRW",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x2b9c073ec670b70f417bbaf3bbb052aa563a0a23/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0xa649a19423052dc6b320360b3c760884e095ac57",
-          "decimals": 18,
-          "name": "fLINK",
-          "symbol": "FLINK",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0xa649a19423052dc6b320360b3c760884e095ac57/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0xf15e88eef35bf4709a4c3e99c00358f9247d4531",
-          "decimals": 18,
-          "name": "fSilver",
-          "symbol": "FSILVER",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0xf15e88eef35bf4709a4c3e99c00358f9247d4531/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0xad84341756bf337f5a0164515b1f6f993d194e1f",
-          "decimals": 18,
-          "name": "fUSD",
-          "symbol": "FUSD",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0xad84341756bf337f5a0164515b1f6f993d194e1f/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0xe297e06761a5489380538a0308b6f9b4a53bea45",
-          "decimals": 18,
-          "name": "fWTI Oil",
-          "symbol": "FWTIOIL",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0xe297e06761a5489380538a0308b6f9b4a53bea45/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0x69c744d3444202d35a2783929a0f930f2fbb05ad",
-          "decimals": 18,
-          "name": "Staked FTM",
-          "symbol": "SFTM",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x69c744d3444202d35a2783929a0f930f2fbb05ad/logo.png"
-      },
-      {
-          "chainId": 250,
-          "address": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
-          "decimals": 18,
-          "name": "Wrapped Fantom",
-          "symbol": "WFTM",
-          "logoURI": "https://raw.githubusercontent.com/Crocoswap/assets/master/blockchains/operachain/assets/0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83/logo.png"
-      }
+        "address": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+        "chainId": 250,
+        "name": "USD Coin",
+        "symbol": "USDC",
+        "decimals": 6,
+        "logoURI": "https://ftmscan.com/token/images/USDC_32.png"
+    },
+    {
+        "address": "0x049d68029688eabf473097a2fc38ef61633a3c7a",
+        "chainId": 250,
+        "name": "Frapped USDT",
+        "symbol": "fUSDT",
+        "decimals": 6,
+        "logoURI": "https://assets.spookyswap.finance/tokens/fUSDT.png"
+    },
+    {
+        "address": "0x74b23882a30290451A17c44f4F05243b6b58C76d",
+        "chainId": 250,
+        "name": "Ethereum",
+        "symbol": "wETH",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/wETH.png"
+    },
+    {
+        "address": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+        "chainId": 250,
+        "name": "Dai Stablecoin",
+        "symbol": "DAI",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/DAI.png"
+    },
+    {
+        "address": "0x321162Cd933E2Be498Cd2267a90534A804051b11",
+        "chainId": 250,
+        "name": "Bitcoin",
+        "symbol": "BTC",
+        "decimals": 8,
+        "logoURI": "https://assets.spookyswap.finance/tokens/wBTC.png"
+    },
+    {
+        "address": "0xfB98B335551a418cD0737375a2ea0ded62Ea213b",
+        "chainId": 250,
+        "name": "miMATIC",
+        "symbol": "MAI",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/MAI.png"
+    },
+    {
+        "address": "0xb3654dc3D10Ea7645f8319668E8F54d2574FBdC8",
+        "chainId": 250,
+        "name": "ChainLink",
+        "symbol": "LINK",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/LINK.png"
+    },
+    {
+        "address": "0x82f0B8B456c1A451378467398982d4834b6829c1",
+        "chainId": 250,
+        "name": "Magic Internet Money",
+        "symbol": "MIM",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/MIM.png"
+    },
+    {
+        "address": "0xD67de0e0a0Fd7b15dC8348Bb9BE742F3c5850454",
+        "chainId": 250,
+        "name": "Bianace",
+        "symbol": "BNB",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/BNB.png"
+    },
+    {
+        "address": "0x9879aBDea01a879644185341F7aF7d8343556B7a",
+        "chainId": 250,
+        "name": "TrueUSD",
+        "symbol": "TUSD",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/TUSD.png"
+    },
+    {
+        "address": "0xae75A438b2E0cB8Bb01Ec1E1e376De11D44477CC",
+        "chainId": 250,
+        "name": "Sushi",
+        "symbol": "SUSHI",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/SUSHI.png"
+    },
+    {
+        "address": "0x511D35c52a3C244E7b8bd92c0C297755FbD89212",
+        "chainId": 250,
+        "name": "Avalanche",
+        "symbol": "AVAX",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/AVAX.png"
+    },
+    {
+        "address": "0x1E4F97b9f9F913c46F1632781732927B9019C68b",
+        "chainId": 250,
+        "name": "Curve DAO",
+        "symbol": "CRV",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/CRV.png"
+    },
+    {
+        "address": "0x29b0Da86e484E1C0029B56e817912d778aC0EC69",
+        "chainId": 250,
+        "name": "yearn.finance",
+        "symbol": "YFI",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/YFI.png"
+    },
+    {
+        "address": "0xc60d7067dfbc6f2caf30523a064f416a5af52963",
+        "chainId": 250,
+        "name": "Treeb",
+        "symbol": "TREEB",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/TREEB.png"
+    },
+    {
+        "address": "0xddcb3ffd12750b45d32e084887fdf1aabab34239",
+        "chainId": 250,
+        "name": "Anyswap",
+        "symbol": "ANY",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/ANY.png"
+    },
+    {
+        "address": "0xf16e81dce15b08f326220742020379b855b87df9",
+        "chainId": 250,
+        "name": "IceToken",
+        "symbol": "ICE",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/ICE.png"
+    },
+
+    {
+        "address": "0x6a07A792ab2965C72a5B8088d3a069A7aC3a993B",
+        "chainId": 250,
+        "name": "Aave",
+        "symbol": "AAVE",
+        "decimals": 18,
+        "logoURI": "https://assets.spookyswap.finance/tokens/AAVE.png"
+    }
   ]
 }

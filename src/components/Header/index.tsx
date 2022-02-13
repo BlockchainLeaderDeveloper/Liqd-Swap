@@ -299,7 +299,6 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.ROPSTEN]: 'Ropsten',
   [ChainId.MATIC]: 'MATIC',
   [ChainId.GÖRLI]: 'Görli',
-  [ChainId.KOVAN]: 'Kovan',
   [ChainId.FTM]: 'FTM',
 }
 
@@ -334,7 +333,7 @@ export default function Header() {
       <HeaderRow>
         <Title href="." style={{ position: 'relative' }}>
           <UniIcon>
-            <img width={'60px'} src={darkMode ? Logo1 : Logo1} alt="logo" />
+            <img width={'80px'} src={darkMode ? Logo1 : Logo1} alt="logo" />
           </UniIcon>
         </Title>
         <HeaderLinks>
